@@ -17,4 +17,13 @@ public class EndStringFilterTest {
     public void testApplyFalse() {
         assertFalse(filter.apply("Чёрное Море"));
     }
+
+    @org.junit.Test
+    public void testPatternNull() {
+        try {
+            EndStringFilter filter = new EndStringFilter(null);
+            assertEquals(filter.getPattern(), null);
+        } catch (IllegalArgumentException err) {
+        }
+    }
 }

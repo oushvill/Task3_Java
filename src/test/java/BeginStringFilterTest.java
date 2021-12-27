@@ -17,4 +17,13 @@ public class BeginStringFilterTest {
     public void testApplyFalse() {
         assertFalse(filter.apply("Облака бывает черное"));
     }
+
+    @org.junit.Test
+    public void testPatternNull() {
+        try {
+            BeginStringFilter filter = new BeginStringFilter(null);
+            assertEquals(filter.getPattern(), null);
+        } catch (IllegalArgumentException err) {
+        }
+    }
 }
